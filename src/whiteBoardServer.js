@@ -8,15 +8,15 @@ var MAX_EMIT_COUNT_PERIOD = 5000; // Duration (in ms) after which the emit count
 // Map from name to *promises* of BoardData
 var boards = {};
 
-// function noFail(fn) {
-// 	return function noFailWrapped(arg) {
-// 		try {
-// 			return fn(arg);
-// 		} catch (e) {
-// 			console.trace(e);
-// 		}
-// 	}
-// }
+function noFail(fn) {
+	return function noFailWrapped(arg) {
+		try {
+			return fn(arg);
+		} catch (e) {
+			console.trace(e);
+		}
+	}
+}
 
 // function startIO(app) {
 // 	io = iolib(app);

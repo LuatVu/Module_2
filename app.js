@@ -23,14 +23,14 @@ app.get('/boards', (req,res)=>{
     res.render('board');
 });
 
+
 server.listen(3000, ()=>{
     console.log('Server is started at PORT: ',3000);
 });
 
 
 
-ioServer(server).on('connection', function(socket){
-    console.log('Socket is: ', socket);
+ioServer(server).on('connection', function(socket){    
     WhiteBoard.addSocket(socket);
 });
 
